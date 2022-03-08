@@ -22,7 +22,11 @@ class PostsPresenter {
     //MARK: - PostsVC
 
     private weak var view: PostsViewProtocol!
-    private var posts = [Post]()
+    private var posts = [Post]() {
+        didSet {
+            view.reloadTableView()
+        }
+    }
     
     //MARK: - Init
 
@@ -35,13 +39,12 @@ class PostsPresenter {
 //MARK: - PostsPresenter Protocol Implementation
 
 extension PostsPresenter: PostsPresenterProtocol {
+    
     func getPosts() {
-        startRequest(request: .getPosts, mappingClass: [Post].self).done {[weak self] result in
-            guard let self = self else {return}
-            self.posts = result
-            self.view.reloadTableView()
-        }.catch { error in
-            
+        NetworkManager.shared.fetchData(request: NetworkAPI.getPosts,
+                                        mappingClass: [Post].self) { [weak self] result in
+            guard let self = self else { return }
+            self.handlePostsResult(result)
         }
     }
     
@@ -54,4 +57,14 @@ extension PostsPresenter: PostsPresenterProtocol {
     }
 }
 
+fileprivate extension PostsPresenter {
+    func handlePostsResult(_ result: Result<[Post], Error>) {
+        switch result {
+        case .success(let posts):
+            self.posts = posts
+        case .failure(let error):
+            debugPrint(error.localizedDescription)
+        }
+    }
+}
 

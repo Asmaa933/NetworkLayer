@@ -1,5 +1,5 @@
 //
-//  PostsModel.swift
+//  Post.swift
 //  NetworkLayer
 //
 //  Created by Asmaa Tarek on 05/05/2021.
