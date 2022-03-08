@@ -26,6 +26,8 @@
 		76DEA3FF2642CD8D00F2A7B1 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */; };
 		76DEA4012642DE8100F2A7B1 /* HTTPErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */; };
 		8820EF733E4B8F26BC11EC84 /* Pods_NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D499FAF12285C208692322 /* Pods_NetworkLayer.framework */; };
+		9928E94327D777F900C51BE2 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928E94227D777F900C51BE2 /* ErrorModel.swift */; };
+		9928E94527D7783600C51BE2 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928E94427D7783600C51BE2 /* ErrorHandler.swift */; };
 		CAD646BDCF586F919BC6BC57 /* Pods_NetworkLayer_NetworkLayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD67EBC243A786046495A4E /* Pods_NetworkLayer_NetworkLayerUITests.framework */; };
 		D0B4C5FB4F63FDED0F6D0E0E /* Pods_NetworkLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2402F338D73E6EA84D412AD3 /* Pods_NetworkLayerTests.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrors.swift; sourceTree = "<group>"; };
 		7CCC010B627D9E203B44D265 /* Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig"; path = "Target Support Files/Pods-NetworkLayer-NetworkLayerUITests/Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		97D10070837A4A5306F262FF /* Pods-NetworkLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer.debug.xcconfig"; path = "Target Support Files/Pods-NetworkLayer/Pods-NetworkLayer.debug.xcconfig"; sourceTree = "<group>"; };
+		9928E94227D777F900C51BE2 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		9928E94427D7783600C51BE2 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		ADCCA5EADDC0D98CE8CF4BED /* Pods-NetworkLayer-NetworkLayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer-NetworkLayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkLayer-NetworkLayerUITests/Pods-NetworkLayer-NetworkLayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8D0DA9A99333760A5699DC5 /* Pods-NetworkLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer.release.xcconfig"; path = "Target Support Files/Pods-NetworkLayer/Pods-NetworkLayer.release.xcconfig"; sourceTree = "<group>"; };
 		C2D499FAF12285C208692322 /* Pods_NetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +193,7 @@
 				76DEA3EC2642B05500F2A7B1 /* TargetType.swift */,
 				76DEA3F12642B37400F2A7B1 /* NetworkAPI.swift */,
 				76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */,
+				9928E94227D777F900C51BE2 /* ErrorModel.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				76DEA3F42642B3D800F2A7B1 /* Constants.swift */,
+				9928E94427D7783600C51BE2 /* ErrorHandler.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9928E94327D777F900C51BE2 /* ErrorModel.swift in Sources */,
 				76DEA3EE2642B05500F2A7B1 /* TargetType.swift in Sources */,
 				76DEA3FA2642C01B00F2A7B1 /* BasePresenter.swift in Sources */,
 				76DEA3FC2642C0CC00F2A7B1 /* BaseController.swift in Sources */,
@@ -511,6 +518,7 @@
 				76DEA3F52642B3D800F2A7B1 /* Constants.swift in Sources */,
 				76B9428B266CD0A90072FB7B /* NetworkMonitor.swift in Sources */,
 				76DEA4012642DE8100F2A7B1 /* HTTPErrors.swift in Sources */,
+				9928E94527D7783600C51BE2 /* ErrorHandler.swift in Sources */,
 				76DEA3BC2642AF9900F2A7B1 /* SceneDelegate.swift in Sources */,
 				76DEA3F22642B37400F2A7B1 /* NetworkAPI.swift in Sources */,
 			);

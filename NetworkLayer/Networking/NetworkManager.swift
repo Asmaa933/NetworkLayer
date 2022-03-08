@@ -7,14 +7,13 @@
 
 import Foundation
 import Alamofire
-import PromiseKit
 
 //MARK: - NetworkManager
 
-class Connectivity {
-    class var isConnectedToInternet:Bool {
-        return NetworkReachabilityManager()?.isReachable ?? false
-    }
+typealias NetworkResponse<T> = (Result<T, Error>) -> Void
+
+protocol NetworkManagerProtocol {
+    func fetchData<T: Decodable>(request: Requestable, mappingClass: T.Type, completion: NetworkResponse<T>?)
 }
 
 class NetworkManager {
@@ -23,49 +22,38 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData<M: Codable>(request: NetworkAPI, mappingClass: M.Type) -> Promise<M> {
-        
-        let method = request.method
-        let headers = Alamofire.HTTPHeaders(request.headers ?? [:])
-        let parameters = buildParameters(task: request.task)
-        let url = request.baseURL + request.path
-        
-        return Promise<M> { seal in
-            
-            if Connectivity.isConnectedToInternet {
-                AF.request(url, method: method, parameters: parameters.0, encoding: parameters.1, headers: headers).responseDecodable { (response: DataResponse<M, AFError>) in
-                    switch response.result {
-                    case .success(let value):
-                        seal.fulfill(value)
-                    case.failure(let error):
-                        print(error.localizedDescription.description)
-                        guard let statusCode = response.response?.statusCode else {
-                            seal.reject(HTTPErrors.undefined)
-                            return
-                        }
-                        
-                        switch statusCode {
-                        case 100..<200:
-                            seal.reject(HTTPErrors.informational)
-                            
-                        case 300..<400:
-                            seal.reject(HTTPErrors.redirection)
-                            
-                        case 400..<500:
-                            seal.reject(HTTPErrors.clientError)
-                            
-                        case 500..<600:
-                            seal.reject(HTTPErrors.serverError)
-                            
-                        default:
-                            seal.reject(HTTPErrors.undefined)
-                        }
-                    }
+    
+    func fetchData<T: Decodable>(request: Requestable,
+                                 mappingClass: T.Type,
+                                 completion: NetworkResponse<T>?) {
+        getRequestData(request: request)
+            .validate(statusCode: 200...300)
+            .responseDecodable { [weak self] (response: DataResponse<T, AFError>) in
+                guard let self = self else { return }
+                let result = self.handleResponse(response: response,
+                                                 mappingClass: mappingClass)
+                switch result {
+                case .success(let decodedObject):
+                    completion?(.success(decodedObject))
+                case .failure(let error):
+                    debugPrint(error.localizedDescription)
+                    completion?(.failure(error))
                 }
-            } else {
-                seal.reject(HTTPErrors.noInternet)
             }
-        }
+    }
+}
+
+private extension NetworkManager {
+    
+    func getRequestData(request: Requestable) -> DataRequest {
+        let parameters = buildParameters(task: request.task)
+        let requestData = AF.request(request.baseURL + request.path,
+                                     method: request.method,
+                                     parameters: parameters.0,
+                                     encoding: parameters.1,
+                                     headers: Alamofire.HTTPHeaders(request.headers ?? [:]))
+        
+        return requestData
     }
     
     private func buildParameters(task: Task) -> ([String:Any], ParameterEncoding) {
@@ -74,6 +62,32 @@ class NetworkManager {
             return ([:] , URLEncoding.default)
         case .requestParameters(parameters: let parameters, encoding: let encoding):
             return (parameters,encoding)
+        }
+    }
+    
+    func handleResponse<T: Decodable> (response: DataResponse<T, AFError>, mappingClass: T.Type) -> Result<T, Error> {
+        guard let jsonResponse = response.data else {
+            return .failure(ErrorHandler.generalError)
+        }
+        switch response.result {
+        case .success:
+            do {
+                let decodedObj = try JSONDecoder().decode(T.self, from: jsonResponse)
+                return .success(decodedObj)
+            } catch (let error) {
+                debugPrint("Error in decoding ** \n \(error.localizedDescription)")
+                return .failure(ErrorHandler.generalError)
+            }
+            
+        case .failure(let error):
+            debugPrint(error.localizedDescription)
+            do {
+                let errorModel = try JSONDecoder().decode(ErrorModel.self, from: jsonResponse)
+                return .failure(ErrorHandler.custom(errorModel.message))
+            } catch {
+                debugPrint(error.localizedDescription)
+                return .failure(error)
+            }
         }
     }
 }
