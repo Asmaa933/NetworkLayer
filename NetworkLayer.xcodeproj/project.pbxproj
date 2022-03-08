@@ -114,6 +114,8 @@
 		76B9428C266CD0B30072FB7B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				76DEA3F82642C00500F2A7B1 /* Base */,
+				76DEA3F32642B3C900F2A7B1 /* Constants */,
 				76B9428A266CD0A90072FB7B /* NetworkMonitor.swift */,
 			);
 			path = Helper;
@@ -144,17 +146,11 @@
 		76DEA3B82642AF9900F2A7B1 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				76DEA3FD2642CD3400F2A7B1 /* Model */,
-				76DEA3F82642C00500F2A7B1 /* Base */,
-				76DEA3F32642B3C900F2A7B1 /* Constants */,
-				76DEA3EF2642B05D00F2A7B1 /* Networking */,
 				76DEA3EA2642AFCB00F2A7B1 /* Delegates */,
+				76DEA3EF2642B05D00F2A7B1 /* Networking */,
 				76DEA3F02642B11B00F2A7B1 /* Posts */,
 				76B9428C266CD0B30072FB7B /* Helper */,
-				76DEA3BF2642AF9900F2A7B1 /* Main.storyboard */,
-				76DEA3C22642AFA100F2A7B1 /* Assets.xcassets */,
-				76DEA3C42642AFA100F2A7B1 /* LaunchScreen.storyboard */,
-				76DEA3C72642AFA100F2A7B1 /* Info.plist */,
+				9928E94127D774A200C51BE2 /* SupportingFiles */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -200,6 +196,7 @@
 		76DEA3F02642B11B00F2A7B1 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				76DEA3FD2642CD3400F2A7B1 /* Model */,
 				76DEA3BD2642AF9900F2A7B1 /* PostsViewController.swift */,
 				76DEA3F62642C00000F2A7B1 /* PostsPresenter.swift */,
 			);
@@ -229,6 +226,17 @@
 				76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9928E94127D774A200C51BE2 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				76DEA3BF2642AF9900F2A7B1 /* Main.storyboard */,
+				76DEA3C22642AFA100F2A7B1 /* Assets.xcassets */,
+				76DEA3C42642AFA100F2A7B1 /* LaunchScreen.storyboard */,
+				76DEA3C72642AFA100F2A7B1 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		A62434DA26166AF6267C48B3 /* Pods */ = {
@@ -683,7 +691,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = NetworkLayer/Info.plist;
+				INFOPLIST_FILE = NetworkLayer/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -703,7 +711,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = NetworkLayer/Info.plist;
+				INFOPLIST_FILE = NetworkLayer/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
