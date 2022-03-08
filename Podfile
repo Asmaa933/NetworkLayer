@@ -6,7 +6,6 @@ target 'NetworkLayer' do
   use_frameworks!
 
   # Pods for NetworkLayer
-  pod 'PromiseKit'
   pod 'Alamofire'
   pod 'JGProgressHUD'
 

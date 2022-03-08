@@ -21,11 +21,11 @@
 		76DEA3F22642B37400F2A7B1 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F12642B37400F2A7B1 /* NetworkAPI.swift */; };
 		76DEA3F52642B3D800F2A7B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F42642B3D800F2A7B1 /* Constants.swift */; };
 		76DEA3F72642C00000F2A7B1 /* PostsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F62642C00000F2A7B1 /* PostsPresenter.swift */; };
-		76DEA3FA2642C01B00F2A7B1 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F92642C01B00F2A7B1 /* BasePresenter.swift */; };
-		76DEA3FC2642C0CC00F2A7B1 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3FB2642C0CC00F2A7B1 /* BaseController.swift */; };
-		76DEA3FF2642CD8D00F2A7B1 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */; };
+		76DEA3FF2642CD8D00F2A7B1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3FE2642CD8D00F2A7B1 /* Post.swift */; };
 		76DEA4012642DE8100F2A7B1 /* HTTPErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */; };
 		8820EF733E4B8F26BC11EC84 /* Pods_NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D499FAF12285C208692322 /* Pods_NetworkLayer.framework */; };
+		9928E94327D777F900C51BE2 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928E94227D777F900C51BE2 /* ErrorModel.swift */; };
+		9928E94527D7783600C51BE2 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928E94427D7783600C51BE2 /* ErrorHandler.swift */; };
 		CAD646BDCF586F919BC6BC57 /* Pods_NetworkLayer_NetworkLayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD67EBC243A786046495A4E /* Pods_NetworkLayer_NetworkLayerUITests.framework */; };
 		D0B4C5FB4F63FDED0F6D0E0E /* Pods_NetworkLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2402F338D73E6EA84D412AD3 /* Pods_NetworkLayerTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,12 +70,12 @@
 		76DEA3F12642B37400F2A7B1 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		76DEA3F42642B3D800F2A7B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		76DEA3F62642C00000F2A7B1 /* PostsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresenter.swift; sourceTree = "<group>"; };
-		76DEA3F92642C01B00F2A7B1 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		76DEA3FB2642C0CC00F2A7B1 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
-		76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		76DEA3FE2642CD8D00F2A7B1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrors.swift; sourceTree = "<group>"; };
 		7CCC010B627D9E203B44D265 /* Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig"; path = "Target Support Files/Pods-NetworkLayer-NetworkLayerUITests/Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		97D10070837A4A5306F262FF /* Pods-NetworkLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer.debug.xcconfig"; path = "Target Support Files/Pods-NetworkLayer/Pods-NetworkLayer.debug.xcconfig"; sourceTree = "<group>"; };
+		9928E94227D777F900C51BE2 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		9928E94427D7783600C51BE2 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		ADCCA5EADDC0D98CE8CF4BED /* Pods-NetworkLayer-NetworkLayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer-NetworkLayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkLayer-NetworkLayerUITests/Pods-NetworkLayer-NetworkLayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8D0DA9A99333760A5699DC5 /* Pods-NetworkLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer.release.xcconfig"; path = "Target Support Files/Pods-NetworkLayer/Pods-NetworkLayer.release.xcconfig"; sourceTree = "<group>"; };
 		C2D499FAF12285C208692322 /* Pods_NetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +114,7 @@
 		76B9428C266CD0B30072FB7B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				76DEA3F32642B3C900F2A7B1 /* Constants */,
 				76B9428A266CD0A90072FB7B /* NetworkMonitor.swift */,
 			);
 			path = Helper;
@@ -144,17 +145,11 @@
 		76DEA3B82642AF9900F2A7B1 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				76DEA3FD2642CD3400F2A7B1 /* Model */,
-				76DEA3F82642C00500F2A7B1 /* Base */,
-				76DEA3F32642B3C900F2A7B1 /* Constants */,
-				76DEA3EF2642B05D00F2A7B1 /* Networking */,
 				76DEA3EA2642AFCB00F2A7B1 /* Delegates */,
+				76DEA3EF2642B05D00F2A7B1 /* Networking */,
 				76DEA3F02642B11B00F2A7B1 /* Posts */,
 				76B9428C266CD0B30072FB7B /* Helper */,
-				76DEA3BF2642AF9900F2A7B1 /* Main.storyboard */,
-				76DEA3C22642AFA100F2A7B1 /* Assets.xcassets */,
-				76DEA3C42642AFA100F2A7B1 /* LaunchScreen.storyboard */,
-				76DEA3C72642AFA100F2A7B1 /* Info.plist */,
+				9928E94127D774A200C51BE2 /* SupportingFiles */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -193,6 +188,7 @@
 				76DEA3EC2642B05500F2A7B1 /* TargetType.swift */,
 				76DEA3F12642B37400F2A7B1 /* NetworkAPI.swift */,
 				76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */,
+				9928E94227D777F900C51BE2 /* ErrorModel.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -200,6 +196,7 @@
 		76DEA3F02642B11B00F2A7B1 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				76DEA3FD2642CD3400F2A7B1 /* Model */,
 				76DEA3BD2642AF9900F2A7B1 /* PostsViewController.swift */,
 				76DEA3F62642C00000F2A7B1 /* PostsPresenter.swift */,
 			);
@@ -210,25 +207,28 @@
 			isa = PBXGroup;
 			children = (
 				76DEA3F42642B3D800F2A7B1 /* Constants.swift */,
+				9928E94427D7783600C51BE2 /* ErrorHandler.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		76DEA3F82642C00500F2A7B1 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				76DEA3F92642C01B00F2A7B1 /* BasePresenter.swift */,
-				76DEA3FB2642C0CC00F2A7B1 /* BaseController.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		76DEA3FD2642CD3400F2A7B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */,
+				76DEA3FE2642CD8D00F2A7B1 /* Post.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9928E94127D774A200C51BE2 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				76DEA3BF2642AF9900F2A7B1 /* Main.storyboard */,
+				76DEA3C22642AFA100F2A7B1 /* Assets.xcassets */,
+				76DEA3C42642AFA100F2A7B1 /* LaunchScreen.storyboard */,
+				76DEA3C72642AFA100F2A7B1 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		A62434DA26166AF6267C48B3 /* Pods */ = {
@@ -492,17 +492,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9928E94327D777F900C51BE2 /* ErrorModel.swift in Sources */,
 				76DEA3EE2642B05500F2A7B1 /* TargetType.swift in Sources */,
-				76DEA3FA2642C01B00F2A7B1 /* BasePresenter.swift in Sources */,
-				76DEA3FC2642C0CC00F2A7B1 /* BaseController.swift in Sources */,
 				76DEA3ED2642B05500F2A7B1 /* NetworkManager.swift in Sources */,
 				76DEA3F72642C00000F2A7B1 /* PostsPresenter.swift in Sources */,
-				76DEA3FF2642CD8D00F2A7B1 /* PostsModel.swift in Sources */,
+				76DEA3FF2642CD8D00F2A7B1 /* Post.swift in Sources */,
 				76DEA3BE2642AF9900F2A7B1 /* PostsViewController.swift in Sources */,
 				76DEA3BA2642AF9900F2A7B1 /* AppDelegate.swift in Sources */,
 				76DEA3F52642B3D800F2A7B1 /* Constants.swift in Sources */,
 				76B9428B266CD0A90072FB7B /* NetworkMonitor.swift in Sources */,
 				76DEA4012642DE8100F2A7B1 /* HTTPErrors.swift in Sources */,
+				9928E94527D7783600C51BE2 /* ErrorHandler.swift in Sources */,
 				76DEA3BC2642AF9900F2A7B1 /* SceneDelegate.swift in Sources */,
 				76DEA3F22642B37400F2A7B1 /* NetworkAPI.swift in Sources */,
 			);
@@ -683,7 +683,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = NetworkLayer/Info.plist;
+				INFOPLIST_FILE = NetworkLayer/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -703,7 +703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = NetworkLayer/Info.plist;
+				INFOPLIST_FILE = NetworkLayer/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

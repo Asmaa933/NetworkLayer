@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: - PostsVC
 
-protocol PostsPresenterProtocol: AnyObject, BasePresenterProtocol {
+protocol PostsPresenterProtocol: AnyObject {
     func getPosts()
     func getPost(at index: Int) -> Post
     func getPostsCount() -> Int
@@ -17,31 +17,34 @@ protocol PostsPresenterProtocol: AnyObject, BasePresenterProtocol {
 
 //MARK: - PostsVC
 
-class PostsPresenter: BasePresenter {
+class PostsPresenter {
     
     //MARK: - PostsVC
 
     private weak var view: PostsViewProtocol!
-    private var posts = [Post]()
+    private var posts = [Post]() {
+        didSet {
+            view.reloadTableView()
+        }
+    }
     
     //MARK: - Init
 
     init(view: PostsViewProtocol) {
         self.view = view
-        super.init(baseView: view)
+      
     }
 }
 
 //MARK: - PostsPresenter Protocol Implementation
 
 extension PostsPresenter: PostsPresenterProtocol {
+    
     func getPosts() {
-        startRequest(request: .getPosts, mappingClass: [Post].self).done {[weak self] result in
-            guard let self = self else {return}
-            self.posts = result
-            self.view.reloadTableView()
-        }.catch { error in
-            
+        NetworkManager.shared.fetchData(request: NetworkAPI.getPosts,
+                                        mappingClass: [Post].self) { [weak self] result in
+            guard let self = self else { return }
+            self.handlePostsResult(result)
         }
     }
     
@@ -54,4 +57,14 @@ extension PostsPresenter: PostsPresenterProtocol {
     }
 }
 
+fileprivate extension PostsPresenter {
+    func handlePostsResult(_ result: Result<[Post], Error>) {
+        switch result {
+        case .success(let posts):
+            self.posts = posts
+        case .failure(let error):
+            debugPrint(error.localizedDescription)
+        }
+    }
+}
 
