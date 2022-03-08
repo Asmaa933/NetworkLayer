@@ -11,13 +11,13 @@ import UIKit
 
 //MARK: - PostsViewProtocol
 
-protocol PostsViewProtocol: AnyObject, BaseViewProtocol {
+protocol PostsViewProtocol: AnyObject {
     func reloadTableView()
 }
 
 //MARK: - PostsVC
 
-class PostsViewController: BaseController {
+class PostsViewController: UIViewController {
     
     //MARK: - Outlets
 

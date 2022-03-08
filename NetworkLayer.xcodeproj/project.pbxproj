@@ -21,9 +21,7 @@
 		76DEA3F22642B37400F2A7B1 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F12642B37400F2A7B1 /* NetworkAPI.swift */; };
 		76DEA3F52642B3D800F2A7B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F42642B3D800F2A7B1 /* Constants.swift */; };
 		76DEA3F72642C00000F2A7B1 /* PostsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F62642C00000F2A7B1 /* PostsPresenter.swift */; };
-		76DEA3FA2642C01B00F2A7B1 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3F92642C01B00F2A7B1 /* BasePresenter.swift */; };
-		76DEA3FC2642C0CC00F2A7B1 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3FB2642C0CC00F2A7B1 /* BaseController.swift */; };
-		76DEA3FF2642CD8D00F2A7B1 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */; };
+		76DEA3FF2642CD8D00F2A7B1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA3FE2642CD8D00F2A7B1 /* Post.swift */; };
 		76DEA4012642DE8100F2A7B1 /* HTTPErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */; };
 		8820EF733E4B8F26BC11EC84 /* Pods_NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D499FAF12285C208692322 /* Pods_NetworkLayer.framework */; };
 		9928E94327D777F900C51BE2 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928E94227D777F900C51BE2 /* ErrorModel.swift */; };
@@ -72,9 +70,7 @@
 		76DEA3F12642B37400F2A7B1 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		76DEA3F42642B3D800F2A7B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		76DEA3F62642C00000F2A7B1 /* PostsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPresenter.swift; sourceTree = "<group>"; };
-		76DEA3F92642C01B00F2A7B1 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		76DEA3FB2642C0CC00F2A7B1 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
-		76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		76DEA3FE2642CD8D00F2A7B1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		76DEA4002642DE8100F2A7B1 /* HTTPErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrors.swift; sourceTree = "<group>"; };
 		7CCC010B627D9E203B44D265 /* Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig"; path = "Target Support Files/Pods-NetworkLayer-NetworkLayerUITests/Pods-NetworkLayer-NetworkLayerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		97D10070837A4A5306F262FF /* Pods-NetworkLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkLayer.debug.xcconfig"; path = "Target Support Files/Pods-NetworkLayer/Pods-NetworkLayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,7 +114,6 @@
 		76B9428C266CD0B30072FB7B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				76DEA3F82642C00500F2A7B1 /* Base */,
 				76DEA3F32642B3C900F2A7B1 /* Constants */,
 				76B9428A266CD0A90072FB7B /* NetworkMonitor.swift */,
 			);
@@ -217,19 +212,10 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		76DEA3F82642C00500F2A7B1 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				76DEA3F92642C01B00F2A7B1 /* BasePresenter.swift */,
-				76DEA3FB2642C0CC00F2A7B1 /* BaseController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		76DEA3FD2642CD3400F2A7B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				76DEA3FE2642CD8D00F2A7B1 /* PostsModel.swift */,
+				76DEA3FE2642CD8D00F2A7B1 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -508,11 +494,9 @@
 			files = (
 				9928E94327D777F900C51BE2 /* ErrorModel.swift in Sources */,
 				76DEA3EE2642B05500F2A7B1 /* TargetType.swift in Sources */,
-				76DEA3FA2642C01B00F2A7B1 /* BasePresenter.swift in Sources */,
-				76DEA3FC2642C0CC00F2A7B1 /* BaseController.swift in Sources */,
 				76DEA3ED2642B05500F2A7B1 /* NetworkManager.swift in Sources */,
 				76DEA3F72642C00000F2A7B1 /* PostsPresenter.swift in Sources */,
-				76DEA3FF2642CD8D00F2A7B1 /* PostsModel.swift in Sources */,
+				76DEA3FF2642CD8D00F2A7B1 /* Post.swift in Sources */,
 				76DEA3BE2642AF9900F2A7B1 /* PostsViewController.swift in Sources */,
 				76DEA3BA2642AF9900F2A7B1 /* AppDelegate.swift in Sources */,
 				76DEA3F52642B3D800F2A7B1 /* Constants.swift in Sources */,

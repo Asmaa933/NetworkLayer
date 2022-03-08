@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: - PostsVC
 
-protocol PostsPresenterProtocol: AnyObject, BasePresenterProtocol {
+protocol PostsPresenterProtocol: AnyObject {
     func getPosts()
     func getPost(at index: Int) -> Post
     func getPostsCount() -> Int
@@ -17,7 +17,7 @@ protocol PostsPresenterProtocol: AnyObject, BasePresenterProtocol {
 
 //MARK: - PostsVC
 
-class PostsPresenter: BasePresenter {
+class PostsPresenter {
     
     //MARK: - PostsVC
 
@@ -28,7 +28,7 @@ class PostsPresenter: BasePresenter {
 
     init(view: PostsViewProtocol) {
         self.view = view
-        super.init(baseView: view)
+      
     }
 }
 
